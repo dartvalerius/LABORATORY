@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MongoDatabaseLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MongoDatabaseLibrary.Classes.ConnectionManager">
+            <summary>
+            Менеджер подключения к базе данных
+            </summary>
+        </member>
+        <member name="F:MongoDatabaseLibrary.Classes.ConnectionManager._dbClient">
+            <summary>
+            Экземпляр подключения к базе данных
+            </summary>
+        </member>
+        <member name="P:MongoDatabaseLibrary.Classes.ConnectionManager.IsConnected">
+            <summary>
+            Флаг подключения к базе
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Connect">
+            <summary>
+            Подключение к базе данных
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Connect(System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="connectionString">Строка подключения</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Connect(System.String,System.Int32)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="host">Имя хоста</param>
+            <param name="port">Номер порта</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Connect(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="host">Имя хоста</param>
+            <param name="port">Номер порта</param>
+            <param name="userName">Имя пользователя</param>
+            <param name="password">Пароль</param>
+            <param name="databaseName">Имя базы данных</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Connect(System.Collections.Generic.Dictionary{System.String,System.Int32},System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="servers">Пара значений хост/порт</param>
+            <param name="replicaSetName">Название реплики</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Connect(System.Collections.Generic.Dictionary{System.String,System.Int32},System.String,System.String,System.String,System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="servers">Пара значений хост/порт</param>
+            <param name="replicaSetName">Название реплики</param>
+            <param name="userName">Имя пользователя</param>
+            <param name="password">Пароль</param>
+            <param name="databaseName">Имя базы данных</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.GetClient">
+            <summary>
+            Возвращает экземпляр клиента MongoDb
+            </summary>
+            <returns>Возвращает экземпляр клиента подключенного к базе</returns>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.Cluster_DescriptionChanged(System.Object,MongoDB.Driver.Core.Clusters.ClusterDescriptionChangedEventArgs)">
+            <summary>
+            Обработчик события изменения описания кластера
+            </summary>
+            <param name="sender">Объект возникновения события</param>
+            <param name="e">Аргументы события</param>
+        </member>
+        <member name="E:MongoDatabaseLibrary.Classes.ConnectionManager.ConnectionStateChanged">
+            <summary>
+            Событие изменения состояния подключения
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Classes.ConnectionManager.OnConnectionStateChanged">
+            <summary>
+            Экземпляр подключения к базе данных
+            </summary>
+        </member>
+        <member name="T:MongoDatabaseLibrary.Classes.Request">
+            <summary>
+            Класс операций и запросов к базе данных
+            </summary>
+        </member>
+        <member name="T:MongoDatabaseLibrary.Exceptions.ConnectionManagerException">
+            <summary>
+            Класс исключения подключения к базе
+            </summary>
+        </member>
+        <member name="P:MongoDatabaseLibrary.Exceptions.ConnectionManagerException.MongoException">
+            <summary>
+            Исключение MongoDb
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Exceptions.ConnectionManagerException.#ctor(System.String)">
+            <summary>
+            Конструктор класса исключений подключения к базе
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Exceptions.ConnectionManagerException.#ctor(System.String,System.Exception)">
+            <summary>
+            Конструктор класса исключений подключения к базе
+            </summary>
+            <param name="message">Сообщение</param>
+            <param name="e">Внутреннее исключение драйвера MongoDb</param>
+        </member>
+        <member name="T:MongoDatabaseLibrary.Interfaces.IMongoConnection">
+            <summary>
+            Интерфейс подключения к базе данных
+            </summary>
+        </member>
+        <member name="P:MongoDatabaseLibrary.Interfaces.IMongoConnection.IsConnected">
+            <summary>
+            Флаг подключения к базе
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.Connect">
+            <summary>
+            Подключение к базе данных
+            </summary>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.Connect(System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="connectionString">Строка подключения</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.Connect(System.String,System.Int32)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="host">Имя хоста</param>
+            <param name="port">Номер порта</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.Connect(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="host">Имя хоста</param>
+            <param name="port">Номер порта</param>
+            <param name="userName">Имя пользователя</param>
+            <param name="password">Пароль</param>
+            <param name="databaseName">Имя базы данных</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.Connect(System.Collections.Generic.Dictionary{System.String,System.Int32},System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="servers">Пара значений хост/порт</param>
+            <param name="replicaSetName">Название реплики</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.Connect(System.Collections.Generic.Dictionary{System.String,System.Int32},System.String,System.String,System.String,System.String)">
+            <summary>
+            Подключение к базе данных
+            </summary>
+            <param name="servers">Пара значений хост/порт</param>
+            <param name="replicaSetName">Название реплики</param>
+            <param name="userName">Имя пользователя</param>
+            <param name="password">Пароль</param>
+            <param name="databaseName">Имя базы данных</param>
+        </member>
+        <member name="M:MongoDatabaseLibrary.Interfaces.IMongoConnection.GetClient">
+            <summary>
+            Возвращает экземпляр клиента MongoDb
+            </summary>
+            <returns>Возвращает экземпляр клиента подключенного к базе</returns>
+        </member>
+        <member name="E:MongoDatabaseLibrary.Interfaces.IMongoConnection.ConnectionStateChanged">
+            <summary>
+            Событие изменения состояния подключения
+            </summary>
+        </member>
+    </members>
+</doc>

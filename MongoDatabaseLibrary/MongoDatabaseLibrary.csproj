@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>0.0.0.1</Version>
+    <Authors>Filippenkov Valeriy</Authors>
+    <Company>Filippenkov</Company>
+    <Product />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>P:\LABORATORY\MongoDatabaseLibrary\MongoDatabaseLibrary.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.11.1" />
+    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.11.1" />
+  </ItemGroup>
+
+</Project>
